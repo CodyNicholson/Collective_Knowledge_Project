@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <form onSubmit={this.addMessage.bind(this)}>
         <h1>Example Firebase Thing</h1>
-		<h4>Owners: Alex, Carissa</h4>
+		<h4>Owners: Alex, Carissa, Brandon</h4>
         <input type="text" ref={ el => this.inputEl = el }/>
         <input type="submit"/>
         <ul>
