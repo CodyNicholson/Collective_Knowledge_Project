@@ -1,10 +1,8 @@
 # Collective Knowledge
 
-> ### React + Redux codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.
+A place for researchers to publish, share, and collaborate on projects
 
 ## Getting started
-
-You can view a live demo over at https://react-redux.realworld.io/
 
 To get the frontend running locally:
 
@@ -18,7 +16,7 @@ Alternatively, you can add `.env` file in the root folder of project to set envi
 
 ### Making requests to the backend API
 
-For convenience, we have a live API server running at https://conduit.productionready.io/api for the application to make requests against. You can view [the API spec here](https://github.com/GoThinkster/productionready/blob/master/api) which contains all routes & responses for the server.
+For convenience, we have a live API server running for the application to make requests against. You can view [the API spec here](https://github.com/GoThinkster/productionready/blob/master/api) which contains all routes & responses for the server.
 
 The source code for the backend server (available for Node, Rails and Django) can be found in the [main RealWorld repo](https://github.com/gothinkster/realworld).
 
@@ -27,7 +25,7 @@ If you want to change the API URL to a local server, simply edit `src/agent.js` 
 
 ## Functionality overview
 
-The example application is a social blogging site. It uses a custom API for all requests, including authentication. You can view a live demo over at https://redux.productionready.io/
+The example application is a social blogging site. It uses a custom API for all requests, including authentication. You can view a live demo over at https://collectiveknowledge-db6d9.firebaseapp.com/
 
 **General functionality:**
 
