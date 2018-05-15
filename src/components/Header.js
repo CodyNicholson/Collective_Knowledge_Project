@@ -82,6 +82,7 @@ class Header extends React.Component {
           <LoggedOutView currentUser={this.props.currentUser} />
 
           <LoggedInView currentUser={this.props.currentUser} />
+
         </div>
       </nav>
     );
