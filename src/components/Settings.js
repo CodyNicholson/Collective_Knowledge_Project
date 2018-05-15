@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import {
   SETTINGS_SAVED,
   SETTINGS_PAGE_UNLOADED,
-  LOGOUT
+  LOGOUT,
+  DELETE_USER
 } from '../constants/actionTypes';
 
 class SettingsForm extends React.Component {
@@ -131,6 +132,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onClickLogout: () => dispatch({ type: LOGOUT }),
+  onClickDelete: user => dispatch({ type: DELETE_USER, payload: agent.Auth.delete(user) }),
   onSubmitForm: user =>
     dispatch({ type: SETTINGS_SAVED, payload: agent.Auth.save(user) }),
   onUnload: () => dispatch({ type: SETTINGS_PAGE_UNLOADED })
@@ -153,6 +155,12 @@ class Settings extends React.Component {
                 onSubmitForm={this.props.onSubmitForm} />
 
               <hr />
+
+              <button
+                className="btn btn-outline-danger"
+                onClick={this.props.onClickDelete}>
+                Delete Profile
+              </button>
 
               <button
                 className="btn btn-outline-danger"
