@@ -36,7 +36,7 @@ const Auth = {
   save: user =>
     requests.put('/user', { user }),
   delete: user =>
-    requests.del('/user'),
+    requests.del(`/user`),
 };
 
 const Tags = {
