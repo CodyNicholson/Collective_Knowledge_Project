@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/collective-knowledge/node_modules
 
 # testing
 /coverage
