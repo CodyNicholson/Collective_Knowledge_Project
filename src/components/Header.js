@@ -47,21 +47,28 @@ const LoggedInView = props => {
           </Link>
         </li>
 
-        <li className="nav-item">
-          <Link to="/settings" className="nav-link">
-            <i className="ion-gear-a"></i>&nbsp;Settings
-          </Link>
-        </li>
-
-        <li className="nav-item">
-          <Link
-            to={`/@${props.currentUser.username}`}
-            className="nav-link">
-            <img src={props.currentUser.image} className="user-pic" alt={props.currentUser.username} />
-            {props.currentUser.username}
-          </Link>
-        </li>
-
+        <div className="w3-dropdown-hover">
+          <button className="nav-link">{props.currentUser.username}</button>
+          <div className="w3-dropdown-content w3-bar-block w3-border">
+            <a className="nav-item">
+              <Link to={`/@${props.currentUser.username}`} className="nav-link">
+                {/* <img src={props.currentUser.image} className="user-pic" /> */}
+                <i className="ion-ios-contact-outline"></i>&nbsp;
+                Profile
+              </Link>
+            </a>
+            <a className="nav-item">
+              <Link to="/settings" className="nav-link">
+                <i className="ion-gear-a"></i>&nbsp;Settings
+              </Link>
+            </a>
+            <a className="nav-item">
+              <Link to="/settings" className="nav-link">
+                <i className="ion-ios-undo"></i>&nbsp;Logout
+              </Link>
+            </a>
+          </div>
+        </div>
       </ul>
     );
   }
