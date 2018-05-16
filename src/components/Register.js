@@ -8,7 +8,12 @@ import {
   REGISTER,
   REGISTER_PAGE_UNLOADED
 } from '../constants/actionTypes';
+import GoogleLogin from 'react-google-login';
 
+
+const responseGoogle = (response) => {
+  console.log(response.w3.U3);
+}
 const mapStateToProps = state => ({ ...state.auth });
 
 const mapDispatchToProps = dispatch => ({
@@ -98,6 +103,13 @@ class Register extends React.Component {
                     disabled={this.props.inProgress}>
                     Sign up
                   </button>
+                  <GoogleLogin
+                  className="btn btn-lg btn-primary pull-xs-left"
+                  clientId="81133584281-26tn33ggg72nor190ul5fhkmbe0kmtfb.apps.googleusercontent.com"
+                  buttonText="Google Login"
+                  onSuccess={responseGoogle}
+                  onFailure={responseGoogle}
+                  />
 
                 </fieldset>
               </form>

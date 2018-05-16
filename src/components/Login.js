@@ -8,8 +8,14 @@ import {
   LOGIN,
   LOGIN_PAGE_UNLOADED
 } from '../constants/actionTypes';
-
+import GoogleLogin from 'react-google-login';
 const mapStateToProps = state => ({ ...state.auth });
+const responseGoogle=(response) =>{
+
+       console.log(response.w3.U3);
+
+        //axios.get('oauth',id_token)
+    }
 
 const mapDispatchToProps = dispatch => ({
   onChangeEmail: value =>
@@ -83,8 +89,16 @@ class Login extends React.Component {
                     Sign in
                   </button>
 
+                  <GoogleLogin
+                  className="btn btn-lg btn-primary pull-xs-left"
+                  clientId="81133584281-26tn33ggg72nor190ul5fhkmbe0kmtfb.apps.googleusercontent.com"
+                  buttonText="Google Login"
+                  onSuccess={responseGoogle}
+                  onFailure={responseGoogle}
+                  />
                 </fieldset>
               </form>
+
             </div>
 
           </div>
