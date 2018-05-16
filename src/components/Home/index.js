@@ -59,7 +59,6 @@ class Home extends React.Component {
                 <Tags
                   tags={this.props.tags}
                   onClickTag={this.props.onClickTag} />
-
               </div>
             </div>
           </div>
