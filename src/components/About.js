@@ -1,33 +1,20 @@
 import ListErrors from './ListErrors';
 import React from 'react';
 import agent from '../agent';
+import Banner from './Home/Banner';
 import { connect } from 'react-redux';
 import {
-  ADD_TAG,
-  EDITOR_PAGE_LOADED,
-  REMOVE_TAG,
-  ARTICLE_SUBMITTED,
-  EDITOR_PAGE_UNLOADED,
-  UPDATE_FIELD_EDITOR
+  EDITOR_PAGE_LOADED
 } from '../constants/actionTypes';
 
 const mapStateToProps = state => ({
+    appName: state.common.appName,
   ...state.editor
 });
 
 const mapDispatchToProps = dispatch => ({
-  onAddTag: () =>
-    dispatch({ type: ADD_TAG }),
   onLoad: payload =>
-    dispatch({ type: EDITOR_PAGE_LOADED, payload }),
-  onRemoveTag: tag =>
-    dispatch({ type: REMOVE_TAG, tag }),
-  onSubmit: payload =>
-    dispatch({ type: ARTICLE_SUBMITTED, payload }),
-  onUnload: payload =>
-    dispatch({ type: EDITOR_PAGE_UNLOADED }),
-  onUpdateField: (key, value) =>
-    dispatch({ type: UPDATE_FIELD_EDITOR, key, value })
+    dispatch({ type: EDITOR_PAGE_LOADED, payload })
 });
 
 class Editor extends React.Component {
@@ -40,34 +27,6 @@ class Editor extends React.Component {
     this.changeDescription = updateFieldEvent('description');
     this.changeBody = updateFieldEvent('body');
     this.changeTagInput = updateFieldEvent('tagInput');
-
-    this.watchForEnter = ev => {
-      if (ev.keyCode === 13) {
-        ev.preventDefault();
-        this.props.onAddTag();
-      }
-    };
-
-    this.removeTagHandler = tag => () => {
-      this.props.onRemoveTag(tag);
-    };
-
-    this.submitForm = ev => {
-      ev.preventDefault();
-      const article = {
-        title: this.props.title,
-        description: this.props.description,
-        body: this.props.body,
-        tagList: this.props.tagList
-      };
-
-      const slug = { slug: this.props.articleSlug };
-      const promise = this.props.articleSlug ?
-        agent.Articles.update(Object.assign(article, slug)) :
-        agent.Articles.create(article);
-
-      this.props.onSubmit(promise);
-    };
   }
 
   componentWillReceiveProps(nextProps) {
@@ -93,24 +52,39 @@ class Editor extends React.Component {
 
   render() {
     return (
-      <div>
 
-<p>HEEEEEEEYYYYY YAAAAAAAAALLLLL</p> 
-<p> HEYYYY YALLLLLL</p> 
+
+      <div className="home-page">
+        <Banner token={this.props.token} appName={this.props.appName} declaration="What we're all about"/>
+
+ 
         <div className="container page">
           <div className="row">
             <div className="col-md-10 offset-md-1 col-xs-12">
 
               <ListErrors errors={this.props.errors}></ListErrors>
 
+              <h2>Overview</h2>
+                <fieldset>
+
+                  <p>Collective Knowledge is a website which allows users to collaborate with peers and publish their research information.</p>
+                  <img alt="image"/>
+                </fieldset>
+              <h2>FAQs</h2>
+                <fieldset>
+
+                  <p>1. This is one common question we get</p>
+
+                  <p>2. This is another</p>
+                </fieldset>
+              <h2>Contact us</h2>
               <form>
                 <fieldset>
 
-                  <p>hi</p>
-
+                  <p>Email us here if you have any questions or suggestions:</p>
+                  <p>CKContactUs@gmail.com</p>
                 </fieldset>
               </form>
-
             </div>
           </div>
         </div>
