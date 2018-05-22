@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: EDITOR_PAGE_LOADED, payload })
 });
 
-class Editor extends React.Component {
+class About extends React.Component {
   constructor() {
     super();
 
@@ -46,10 +46,6 @@ class Editor extends React.Component {
     this.props.onLoad(null);
   }
 
-  componentWillUnmount() {
-    this.props.onUnload();
-  }
-
   render() {
     return (
 
@@ -68,14 +64,14 @@ class Editor extends React.Component {
                 <fieldset>
 
                   <p>Collective Knowledge is a website which allows users to collaborate with peers and publish their research information.</p>
-                  <img alt="image"/>
+                  <img alt="infoGraphic"/>
                 </fieldset>
               <h2>FAQs</h2>
                 <fieldset>
 
-                  <p>1. This is one common question we get</p>
+                  <div className="qanda">Q. If I delete my profile, is any of my data kept?<br/>A. No.</div>
 
-                  <p>2. This is another</p>
+                  <div className="qanda">Q. How do I change my profile picture?<br/>A. Select "Copy image address" when you right click on your desired image online, then paste it into the the profile picture URL field in your settings.</div>
                 </fieldset>
               <h2>Contact us</h2>
               <form>
@@ -93,4 +89,4 @@ class Editor extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Editor);
+export default connect(mapStateToProps, mapDispatchToProps)(About);

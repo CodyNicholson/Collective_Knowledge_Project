@@ -64,7 +64,7 @@ const LoggedInView = props => {
         <div className="w3-dropdown-hover">
           <button className="nav-link">{props.currentUser.username}</button>
           <div className="w3-dropdown-content w3-bar-block w3-border">
-            <a className="nav-item">
+            <a className="nav-item profile">
               <Link to={`/@${props.currentUser.username}`} className="nav-link">
                 {/* <img src={props.currentUser.image} className="user-pic" /> */}
                 <i className="ion-ios-contact-outline"></i>&nbsp;
