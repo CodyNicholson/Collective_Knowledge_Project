@@ -1,5 +1,6 @@
 import superagentPromise from 'superagent-promise';
 import _superagent from 'superagent';
+import fire from './fire';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
