@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Banner page appears 1`] = `
+exports[`Banner module test 1`] = `
 <div>
   <div
     className="banner"
