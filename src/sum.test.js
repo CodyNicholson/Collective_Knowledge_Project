@@ -1,3 +1,5 @@
+//This is a test test file built from https://facebook.github.io/jest/docs/en/getting-started.html
+
 const sum = require('./sum');
 
 test('adds 1 + 2 to equal 3', () => {

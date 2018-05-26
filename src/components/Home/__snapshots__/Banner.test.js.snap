@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner page appears 1`] = `
+<div>
+  <div
+    className="banner"
+  >
+    <div
+      className="container"
+    >
+      <h1
+        className="logo-font"
+      />
+      <p />
+    </div>
+  </div>
+  <div
+    className="banner"
+  >
+    <div
+      className="container"
+    >
+      <h1
+        className="logo-font"
+      >
+        Collective Knowledge
+      </h1>
+      <p>
+        What we're all about
+      </p>
+    </div>
+  </div>
+</div>
+`;

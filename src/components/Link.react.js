@@ -1,4 +1,5 @@
 // Link.react.js
+// This is a Test file from built from  https://facebook.github.io/jest/docs/en/tutorial-react.html
 import React from 'react';
 
 const STATUS = {

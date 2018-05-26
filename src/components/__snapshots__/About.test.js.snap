@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About page appears 1`] = `
+<div
+  className="home-page"
+>
+  <div
+    className="banner"
+  >
+    <div
+      className="container"
+    >
+      <h1
+        className="logo-font"
+      />
+      <p>
+        What we're all about
+      </p>
+    </div>
+  </div>
+  <div
+    className="container page"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-10 offset-md-1 col-xs-12"
+      >
+        <h2>
+          Overview
+        </h2>
+        <fieldset>
+          <p>
+            Collective Knowledge is a website which allows users to collaborate with peers and publish their research information.
+          </p>
+          <img
+            alt="infoGraphic"
+          />
+        </fieldset>
+        <h2>
+          FAQs
+        </h2>
+        <fieldset>
+          <div
+            className="qanda"
+          >
+            Q. If I delete my profile, is any of my data kept?
+            <br />
+            A. No.
+          </div>
+          <div
+            className="qanda"
+          >
+            Q. How do I change my profile picture?
+            <br />
+            A. Select "Copy image address" when you right click on your desired image online, then paste it into the the profile picture URL field in your settings.
+          </div>
+        </fieldset>
+        <h2>
+          Contact us
+        </h2>
+        <form>
+          <fieldset>
+            <p>
+              Email us here if you have any questions or suggestions:
+            </p>
+            <p>
+              CKContactUs@gmail.com
+            </p>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,49 +1,26 @@
+//This file was begun using code from Editor.js ~Carissa Ward
 import ListErrors from './ListErrors';
 import React from 'react';
 import agent from '../agent';
 import Banner from './Home/Banner';
 import { connect } from 'react-redux';
 import {
-  EDITOR_PAGE_LOADED
+  ABOUT_PAGE_LOADED
 } from '../constants/actionTypes';
 
 const mapStateToProps = state => ({
-    appName: state.common.appName,
-  ...state.editor
+    appName: state.common.appName
 });
 
 const mapDispatchToProps = dispatch => ({
   onLoad: payload =>
-    dispatch({ type: EDITOR_PAGE_LOADED, payload })
+    dispatch({ type: ABOUT_PAGE_LOADED, payload })
 });
 
-class About extends React.Component {
+export class About extends React.Component {
   constructor() {
     super();
-
-    const updateFieldEvent =
-      key => ev => this.props.onUpdateField(key, ev.target.value);
-    this.changeTitle = updateFieldEvent('title');
-    this.changeDescription = updateFieldEvent('description');
-    this.changeBody = updateFieldEvent('body');
-    this.changeTagInput = updateFieldEvent('tagInput');
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.slug !== nextProps.match.params.slug) {
-      if (nextProps.match.params.slug) {
-        this.props.onUnload();
-        return this.props.onLoad(agent.Articles.get(this.props.match.params.slug));
-      }
-      this.props.onLoad(null);
-    }
-  }
-
-  componentWillMount() {
-    if (this.props.match.params.slug) {
-      return this.props.onLoad(agent.Articles.get(this.props.match.params.slug));
-    }
-    this.props.onLoad(null);
+    //const updateFieldEvent = key => ev => this.props.onUpdateField(key, ev.target.value);
   }
 
   render() {
