@@ -161,11 +161,11 @@ class Settings extends React.Component {
                 onClick={this.props.onClickDelete}>
                 Delete Profile
               </button>
-
+              
               <button
-                className="btn btn-outline-danger"
+                className="btn btn-outline-danger marginL"
                 onClick={this.props.onClickLogout}>
-                Or click here to logout.
+                Click here to logout.
               </button>
 
             </div>

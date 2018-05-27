@@ -9,7 +9,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: DELETE_ARTICLE, payload })
 });
 
-const ArticleActions = props => {
+export const ArticleActions = props => {
   const article = props.article;
   const del = () => {
     props.onClickDelete(agent.Articles.del(article.slug))
