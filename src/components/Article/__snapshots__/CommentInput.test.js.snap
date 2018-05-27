@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comment Input component test 1`] = `
+<form
+  className="card comment-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="card-block"
+  >
+    <textarea
+      className="form-control"
+      onChange={[Function]}
+      placeholder="Write a comment..."
+      rows="3"
+      value=""
+    />
+  </div>
+  <div
+    className="card-footer"
+  >
+    <img
+      alt="john"
+      className="comment-author-img"
+      src={null}
+    />
+    <button
+      className="btn btn-sm btn-primary"
+      type="submit"
+    >
+      Post Comment
+    </button>
+  </div>
+</form>
+`;

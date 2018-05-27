@@ -8,7 +8,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: SET_PAGE, page, payload })
 });
 
-const ListPagination = props => {
+export const ListPagination = props => {
   if (props.articlesCount <= 10) {
     return null;
   }

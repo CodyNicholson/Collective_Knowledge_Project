@@ -4,7 +4,7 @@ import React from 'react';
 import ArticleList from './ArticleList';
 import renderer from 'react-test-renderer';
 
-test('Tags module test', () => {
+test('ArticleList component test', () => {
   const component = renderer.create(
 	<ArticleList>
 	</ArticleList>

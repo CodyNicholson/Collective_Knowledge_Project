@@ -8,7 +8,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: ADD_COMMENT, payload })
 });
 
-class CommentInput extends React.Component {
+export class CommentInput extends React.Component {
   constructor() {
     super();
     this.state = {
