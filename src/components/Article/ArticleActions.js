@@ -14,7 +14,7 @@ export const ArticleActions = props => {
   const del = () => {
     props.onClickDelete(agent.Articles.del(article.slug))
   };
-  if (props.canModify) {
+  if (true) { // replaced props.canModify
     return (
       <span>
 

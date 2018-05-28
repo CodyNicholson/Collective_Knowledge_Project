@@ -104,8 +104,9 @@ class Editor extends React.Component {
   }
 
   send = () => {
+    this.changeTagInput;
     const socket = socketIOClient(this.state.endpoint)
-    //socket.emit('change color', 'red') 
+    socket.emit('edit event', {text: this.props.body});
   }
 
   render() {
@@ -154,7 +155,7 @@ class Editor extends React.Component {
                       type="text"
                       placeholder="Enter tags"
                       value={this.props.tagInput}
-                      onChange={this.changeTagInput}
+                      onChange={this.changeTagInput} //this.changeTagInput
                       onKeyUp={this.watchForEnter} />
 
                     <div className="tag-list">
