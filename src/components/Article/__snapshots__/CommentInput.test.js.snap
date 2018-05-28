@@ -10,6 +10,7 @@ exports[`Comment Input component test 1`] = `
   >
     <textarea
       className="form-control"
+      id="commentTA"
       onChange={[Function]}
       placeholder="Write a comment..."
       rows="3"

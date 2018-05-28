@@ -1,20 +1,15 @@
 //This file was begun using code from Link.react.test.js, from the Jest Testing React Apps Guide
 //https://facebook.github.io/jest/docs/en/tutorial-react.html
 import React from 'react';
-import { CommentInput } from './CommentInput';
+import { DeleteButton } from './DeleteButton';
 import renderer from 'react-test-renderer';
 
-var user = {image: null, username: "john"}
-
-test('Comment Input component test', () => {
+test('Tags module test', () => {
   const component = renderer.create(
-	   <CommentInput currentUser={user}>
-	   </CommentInput>
+	<DeleteButton>
+	</DeleteButton>
   );
 
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
-
-  //console.log(JSON.stringify(tree, null, 2));
-
 });

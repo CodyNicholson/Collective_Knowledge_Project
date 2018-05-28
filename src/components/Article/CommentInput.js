@@ -33,6 +33,7 @@ export class CommentInput extends React.Component {
       <form className="card comment-form" onSubmit={this.createComment}>
         <div className="card-block">
           <textarea className="form-control"
+            id="commentTA"
             placeholder="Write a comment..."
             value={this.state.body}
             onChange={this.setBody}
