@@ -8,7 +8,7 @@ const YourFeedTab = props => {
   if (props.token) {
     const clickHandler = ev => {
       ev.preventDefault();
-      props.onTabClick('feed', agent.Articles.feed, agent.Articles.feed());
+      props.onTabClick('feed', agent.Articles.byAuthor, agent.Articles.byAuthor(props.currentUser.username));
     }
 
     return (
@@ -16,7 +16,7 @@ const YourFeedTab = props => {
         <a  href=""
             className={ props.tab === 'feed' ? 'nav-link active' : 'nav-link' }
             onClick={clickHandler}>
-          Your Feed
+          Your Articles
         </a>
       </li>
     );
@@ -58,7 +58,8 @@ const TagFilterTab = props => {
 const mapStateToProps = state => ({
   ...state.articleList,
   tags: state.home.tags,
-  token: state.common.token
+  token: state.common.token,
+  currentUser: state.common.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -71,10 +72,11 @@ const MainView = props => {
       <div className="feed-toggle">
         <ul className="nav nav-pills outline-active">
 
-         {/* <YourFeedTab
+         <YourFeedTab
             token={props.token}
             tab={props.tab}
-            onTabClick={props.onTabClick} /> */}
+            currentUser={props.currentUser}
+            onTabClick={props.onTabClick} />
 
           <GlobalFeedTab tab={props.tab} onTabClick={props.onTabClick} />
 
@@ -87,6 +89,7 @@ const MainView = props => {
         pager={props.pager}
         articles={props.articles}
         loading={props.loading}
+        currentUser={props.currentUser}
         articlesCount={props.articlesCount}
         currentPage={props.currentPage} />
     </div>
