@@ -1,34 +1,13 @@
 
+const express = require('express')
+const http = require('http')
+const socketIO = require('socket.io')
 
-import express from 'express';  
-import webpack from 'webpack';  
-import path from 'path';  
-import config from '../webpack.config.dev';  
-import open from 'open';  
+const port = 4001
+const app = express()
+const server = http.createServer(app)
 
-const port = 3000;  
-const app = express();  
-const compiler = webpack(config);
-
-app.use(require('webpack-dev-middleware')(compiler, {  
-  noInfo: true,
-  publicPath: config.output.publicPath
-}));
-
-app.use(require('webpack-hot-middleware')(compiler));  
-
-app.get('*', function(req, res) {  
-  res.sendFile(path.join( __dirname, '../public/index.html'));
-});
-
-const server = app.listen(port, function(err) {  
-  if (err) {
-    console.log(err);
-  } else {
-    open(`http://localhost:${port}`);
-    console.log('listening on port ', port);
-  }
-});
+const io = socketIO(server)
 
 io.on('connection', (client) => {
 
@@ -55,6 +34,4 @@ io.on('connection', (client) => {
 
   });
 
-//const port = 8000;
-//io.listen(port);
-//console.log('listening on port ', port);
+  server.listen(port, () => console.log(`Listening on port ${port}`))
