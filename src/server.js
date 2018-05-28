@@ -14,22 +14,22 @@ io.on('connection', (client) => {
   client.on('edit', function(data) {
     // Data will be the article id
     console.log('SERVER: ENTERING ARTICLE EDIT')
-    console.log(data)
-    socket.join(data.room);
+    console.log(data.article);
+    client.join(data.article);
   });
 
   client.on('leave edit', function(data) {
     // Data will be the article id
     console.log('SERVER: CLIENT LEAVING EDITOR')
-    console.log(data)
-    socket.leave(data.room)
+    console.log(data.article)
+    client.leave(data.article)
   })
 
   client.on('edit event', function(data) {
     // Data will be the text user is entering
     console.log('SERVER: EDITING EVENT')
     console.log(data)
-    socket.broadcast.to(data.room).emit('receive code', {code: data.code, currentlyTyping: data.currentlyTyping});
+    //client.broadcast.to(data.room).emit('change text', data.text);
   })
 
   });

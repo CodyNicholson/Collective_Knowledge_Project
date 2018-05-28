@@ -2,6 +2,7 @@ import ListErrors from './ListErrors';
 import React from 'react';
 import agent from '../agent';
 import { connect } from 'react-redux';
+import socketIOClient from 'socket.io-client'
 import {
   ADD_TAG,
   EDITOR_PAGE_LOADED,
@@ -33,6 +34,10 @@ const mapDispatchToProps = dispatch => ({
 class Editor extends React.Component {
   constructor() {
     super();
+
+    this.state = {
+      endpoint: "http://172.16.0.6:4001", // Where our server is
+    };
 
     const updateFieldEvent =
       key => ev => this.props.onUpdateField(key, ev.target.value);
@@ -82,13 +87,25 @@ class Editor extends React.Component {
 
   componentWillMount() {
     if (this.props.match.params.slug) {
+      const socket = socketIOClient(this.state.endpoint);
+      console.log("emitting edit");
+      socket.emit('edit', {article: this.props.match.params.slug});
       return this.props.onLoad(agent.Articles.get(this.props.match.params.slug));
     }
     this.props.onLoad(null);
   }
 
   componentWillUnmount() {
+    if (this.props.match.params.slug) {
+      const socket = socketIOClient(this.state.endpoint)
+      socket.emit('leave edit', {article: this.props.articleSlug});
+    }
     this.props.onUnload();
+  }
+
+  send = () => {
+    const socket = socketIOClient(this.state.endpoint)
+    //socket.emit('change color', 'red') 
   }
 
   render() {
