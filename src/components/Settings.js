@@ -138,7 +138,7 @@ const mapDispatchToProps = dispatch => ({
   onUnload: () => dispatch({ type: SETTINGS_PAGE_UNLOADED })
 });
 
-class Settings extends React.Component {
+export class Settings extends React.Component {
   render() {
     return (
       <div className="settings-page">

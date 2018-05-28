@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: REGISTER_PAGE_UNLOADED })
 });
 
-class Register extends React.Component {
+export class Register extends React.Component {
   constructor() {
     super();
     this.changeEmail = ev => this.props.onChangeEmail(ev.target.value);

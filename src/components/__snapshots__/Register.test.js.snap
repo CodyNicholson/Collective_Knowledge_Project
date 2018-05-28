@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tags module test 1`] = `
+<div
+  className="auth-page"
+>
+  <div
+    className="container page"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-6 offset-md-3 col-xs-12"
+      >
+        <h1
+          className="text-xs-center"
+        >
+          Sign Up
+        </h1>
+        <p
+          className="text-xs-center"
+        >
+          <a
+            href="/login"
+            onClick={[Function]}
+          >
+            Have an account?
+          </a>
+        </p>
+        <form
+          onSubmit={[Function]}
+        >
+          <fieldset>
+            <fieldset
+              className="form-group"
+            >
+              <input
+                className="form-control form-control-lg"
+                onChange={[Function]}
+                placeholder="Username"
+                type="text"
+                value={undefined}
+              />
+            </fieldset>
+            <fieldset
+              className="form-group"
+            >
+              <input
+                className="form-control form-control-lg"
+                onChange={[Function]}
+                placeholder="Email"
+                type="email"
+                value={undefined}
+              />
+            </fieldset>
+            <fieldset
+              className="form-group"
+            >
+              <input
+                className="form-control form-control-lg"
+                onChange={[Function]}
+                placeholder="Password"
+                type="password"
+                value={undefined}
+              />
+            </fieldset>
+            <button
+              className="btn btn-lg btn-primary pull-xs-right"
+              disabled={undefined}
+              type="submit"
+            >
+              Sign up
+            </button>
+            <button
+              className="btn btn-lg btn-primary pull-xs-left"
+              disabled={true}
+              onClick={[Function]}
+              style={
+                Object {
+                  "opacity": 0.6,
+                }
+              }
+              type="button"
+            >
+              Google Login
+            </button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;

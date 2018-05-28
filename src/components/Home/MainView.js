@@ -65,7 +65,7 @@ const mapDispatchToProps = dispatch => ({
   onTabClick: (tab, pager, payload) => dispatch({ type: CHANGE_TAB, tab, pager, payload })
 });
 
-const MainView = props => {
+export const MainView = props => {
   return (
     <div className="col-md-9">
       <div className="feed-toggle">

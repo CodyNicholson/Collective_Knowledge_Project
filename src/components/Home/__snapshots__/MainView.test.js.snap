@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tags module test 1`] = `
+<div
+  className="col-md-9"
+>
+  <div
+    className="feed-toggle"
+  >
+    <ul
+      className="nav nav-pills outline-active"
+    >
+      <li
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          href=""
+          onClick={[Function]}
+        >
+          Global Feed
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="article-preview"
+  >
+    Loading...
+  </div>
+</div>
+`;

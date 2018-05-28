@@ -39,13 +39,13 @@ export class About extends React.Component {
               <ListErrors errors={this.props.errors}></ListErrors>
 
               <h2>Overview</h2>
-                <fieldset>
+                <fieldset className="topBottomBorder">
 
                   <p>Collective Knowledge is a website which allows users to collaborate with peers and publish their research information.</p>
                   <img src={infoGraphic} alt="infoGraphic" className="centerGraphic"/>
                 </fieldset>
               <h2>FAQs</h2>
-                <fieldset>
+                <fieldset className="topBottomBorder">
 
                   <div className="qanda">Q. If I delete my profile, is any of my data kept?<br/>A. No.</div>
                   <div className="qanda">Q. How do I change my profile picture?<br/>A. Select "Copy image address" when you right click on your desired image online, then paste it into the the profile picture URL field in your settings.</div>
@@ -55,7 +55,7 @@ export class About extends React.Component {
                 </fieldset>
               <h2>Contact us</h2>
               <form>
-                <fieldset>
+                <fieldset className="topBottomBorder">
 
                   <p>Email us here if you have any questions or suggestions:</p>
                   <p>CKContactUs@gmail.com</p>

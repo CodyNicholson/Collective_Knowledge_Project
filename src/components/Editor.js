@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: UPDATE_FIELD_EDITOR, key, value })
 });
 
-class Editor extends React.Component {
+export class Editor extends React.Component {
   constructor() {
     super();
 
