@@ -41,9 +41,10 @@ class Editor extends React.Component {
 
     const updateFieldEvent =
       key => ev => this.props.onUpdateField(key, ev.target.value);
+
     this.changeTitle = updateFieldEvent('title');
     this.changeDescription = updateFieldEvent('description');
-    this.changeBody = updateFieldEvent('body');
+    this.changeBody = updateFieldEvent('body') 
     this.changeTagInput = updateFieldEvent('tagInput');
 
     this.watchForEnter = ev => {
@@ -145,7 +146,7 @@ class Editor extends React.Component {
                       rows="8"
                       placeholder="Write your article (in markdown)"
                       value={this.props.body}
-                      onChange={this.changeBody}>
+                      onChange={(event) => { this.changeBody(event); this.send();}}>
                     </textarea>
                   </fieldset>
 
