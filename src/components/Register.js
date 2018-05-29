@@ -103,14 +103,6 @@ class Register extends React.Component {
                     disabled={this.props.inProgress}>
                     Sign up
                   </button>
-                  <GoogleLogin
-                  className="btn btn-lg btn-primary pull-xs-left"
-                  clientId="81133584281-26tn33ggg72nor190ul5fhkmbe0kmtfb.apps.googleusercontent.com"
-                  buttonText="Google Login"
-                  onSuccess={responseGoogle}
-                  onFailure={responseGoogle}
-                  />
-
                 </fieldset>
               </form>
             </div>

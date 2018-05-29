@@ -12,7 +12,13 @@ const LoggedOutView = props => {
           <i className="ion-home"></i>&nbsp;Home
           </Link>
         </li>
-        
+
+        <li className="nav-item">
+          <Link to="/DevNotes" className="nav-link">
+          <i className="ion-home"></i>&nbsp;DevNotes
+          </Link>
+        </li>
+
         <li className="nav-item">
           <Link to="/about" className="nav-link">
             <i className="ion-information-circled"></i>&nbsp;About
