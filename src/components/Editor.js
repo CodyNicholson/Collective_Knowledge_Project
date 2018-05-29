@@ -110,19 +110,27 @@ class Editor extends React.Component {
     this.props.onUnload();
   }
 
-  send = () => {
+  send = (e) => {
     //console.log(event.type);
-    this.changeTagInput;
+    // this.changeTagInput;
     //const socket = socketIOClient(this.state.endpoint)
-    socket.emit('edit event', {article: this.props.articleSlug, text: this.props.body});
+    console.log("SENDING!");
+    console.log("BEFORE");
+    console.log(this.props.body);
+    this.changeBody(e);
+    console.log("AFTER");
+    console.log(this.props.body);
+    console.log(e.target.value);
+    socket.emit('edit event', {article: this.props.articleSlug, text: e.target.value});
   }
 
   updateBodyText(payload) {
+    console.log("UPDATING!");
     //this.props.body = payload.text;
-    console.log(payload);
+    //console.log(payload);
     this.props.onUpdateField("body", payload)
-    console.log("New body")
-    console.log(this.props.body)
+    //console.log("New body")
+    //console.log(this.props.body)
   }
 
   render() {
@@ -161,7 +169,7 @@ class Editor extends React.Component {
                       rows="8"
                       placeholder="Write your article (in markdown)"
                       value={this.props.body}
-                      onChange={(event) => { this.changeBody(event); this.send(event);}}>
+                      onChange={(event) => { this.send(event);}}>
                     </textarea>
                   </fieldset>
 
