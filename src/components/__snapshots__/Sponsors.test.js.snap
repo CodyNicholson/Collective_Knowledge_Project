@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tags module test 1`] = `
+<div
+  className="home-page"
+>
+  <div
+    className="banner"
+  >
+    <div
+      className="container"
+    >
+      <h1
+        className="logo-font"
+      />
+      <p>
+        Meet our sponsors!
+      </p>
+    </div>
+  </div>
+  <div
+    className="container page"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-10 offset-md-1 col-xs-12"
+      />
+    </div>
+  </div>
+</div>
+`;

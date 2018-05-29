@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tags module test 1`] = `
+<div>
+  <div
+    className="pageBodyContainer"
+  >
+    <div
+      className="scrollDiv"
+    >
+      <div>
+        <div
+          className="board"
+        >
+          <button
+            className="button-create"
+            onClick={[Function]}
+          >
+            Add New Event
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

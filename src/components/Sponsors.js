@@ -6,7 +6,7 @@ import Banner from './Home/Banner';
 import { connect } from 'react-redux';
 import infoGraphic from './ckDiagram.png';
 import {
-  ABOUT_PAGE_LOADED
+  SPONSORS_PAGE_LOADED
 } from '../constants/actionTypes';
 
 const mapStateToProps = state => ({
@@ -15,7 +15,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onLoad: payload =>
-    dispatch({ type: ABOUT_PAGE_LOADED, payload })
+    dispatch({ type: SPONSORS_PAGE_LOADED, payload })
 });
 
 export class Sponsors extends React.Component {
