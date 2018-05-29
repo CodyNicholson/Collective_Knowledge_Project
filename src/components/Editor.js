@@ -31,18 +31,12 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: UPDATE_FIELD_EDITOR, key, value })
 });
 
-const ENDPOINT = "http://172.16.0.6:4001"
-const socket = socketIOClient(ENDPOINT);
+const ENDPOINT = "http://75.102.199.90:4001"    // Server address
+const socket = socketIOClient(ENDPOINT);        // Socket obj
 
 export class Editor extends React.Component {
   constructor() {
     super();
-
-    this.state = {
-      endpoint: "http://172.16.0.6:4001", // Where our server is
-    };
-    //socket = socketIOClient(this.state.endpoint);
-
     const updateFieldEvent =
       key => ev => this.props.onUpdateField(key, ev.target.value);
 
