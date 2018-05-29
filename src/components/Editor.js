@@ -31,6 +31,9 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: UPDATE_FIELD_EDITOR, key, value })
 });
 
+const ENDPOINT = "http://172.16.0.6:4001"
+const socket = socketIOClient(ENDPOINT);
+
 export class Editor extends React.Component {
   constructor() {
     super();
@@ -38,6 +41,7 @@ export class Editor extends React.Component {
     this.state = {
       endpoint: "http://172.16.0.6:4001", // Where our server is
     };
+    //socket = socketIOClient(this.state.endpoint);
 
     const updateFieldEvent =
       key => ev => this.props.onUpdateField(key, ev.target.value);
@@ -51,6 +55,7 @@ export class Editor extends React.Component {
       if (ev.keyCode === 13) {
         ev.preventDefault();
         this.props.onAddTag();
+        socket.emit('enter tag', {article: this.props.articleSlug});
       }
     };
 
@@ -74,6 +79,13 @@ export class Editor extends React.Component {
 
       this.props.onSubmit(promise);
     };
+
+    socket.on('change body', (payload) => this.updateBodyText(payload));
+    socket.on('change description', (payload) => this.updateDescriptionText(payload));
+    socket.on('change title', (payload) => this.updateTitleText(payload));
+    socket.on('change tags', (payload) => this.updateTagText(payload));
+    socket.on('add tag', (payload) => this.addTagsSock(payload));
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -88,7 +100,7 @@ export class Editor extends React.Component {
 
   componentWillMount() {
     if (this.props.match.params.slug) {
-      const socket = socketIOClient(this.state.endpoint);
+      //const socket = socketIOClient(this.state.endpoint);
       console.log("emitting edit");
       socket.emit('edit', {article: this.props.match.params.slug});
       return this.props.onLoad(agent.Articles.get(this.props.match.params.slug));
@@ -98,16 +110,47 @@ export class Editor extends React.Component {
 
   componentWillUnmount() {
     if (this.props.match.params.slug) {
-      const socket = socketIOClient(this.state.endpoint)
+      //const socket = socketIOClient(this.state.endpoint)
       socket.emit('leave edit', {article: this.props.articleSlug});
     }
     this.props.onUnload();
   }
 
-  send = () => {
-    this.changeTagInput;
-    const socket = socketIOClient(this.state.endpoint)
-    socket.emit('edit event', {text: this.props.body});
+  sendBody = (e) => {
+    this.changeBody(e);
+    socket.emit('edit body', {article: this.props.articleSlug, text: e.target.value});
+  }
+
+  sendDescription = (e) => {
+    this.changeDescription(e);
+    socket.emit('edit description', {article: this.props.articleSlug, text: e.target.value});
+  }
+
+  sendTitle = (e) => {
+    this.changeTitle(e);
+    socket.emit('edit title', {article: this.props.articleSlug, text: e.target.value});
+  }
+
+  sendTags = (e) => {
+    this.changeTagInput(e);
+    socket.emit('edit tags', {article: this.props.articleSlug, text: e.target.value});
+  }
+
+  updateBodyText(payload) {
+    this.props.onUpdateField("body", payload)
+  }
+  updateDescriptionText(payload) {
+    this.props.onUpdateField("description", payload)
+  }
+  updateTitleText(payload) {
+    this.props.onUpdateField("title", payload)
+  }
+  updateTagText(payload) {
+    this.props.onUpdateField("tagInput", payload)
+  }
+  addTagsSock(payload) {
+    //this.props.onUpdateField("tagInput", payload)
+    this.props.onAddTag();
   }
 
   render() {
@@ -128,7 +171,7 @@ export class Editor extends React.Component {
                       type="text"
                       placeholder="Article Title"
                       value={this.props.title}
-                      onChange={this.changeTitle} />
+                      onChange={(event) => { this.sendTitle(event);}} />
                   </fieldset>
 
                   <fieldset className="form-group">
@@ -137,7 +180,7 @@ export class Editor extends React.Component {
                       type="text"
                       placeholder="What's this article about?"
                       value={this.props.description}
-                      onChange={this.changeDescription} />
+                      onChange={(event) => { this.sendDescription(event);}} />
                   </fieldset>
 
                   <fieldset className="form-group">
@@ -146,7 +189,7 @@ export class Editor extends React.Component {
                       rows="8"
                       placeholder="Write your article (in markdown)"
                       value={this.props.body}
-                      onChange={(event) => { this.changeBody(event); this.send();}}>
+                      onChange={(event) => { this.sendBody(event);}}>
                     </textarea>
                   </fieldset>
 
@@ -156,7 +199,7 @@ export class Editor extends React.Component {
                       type="text"
                       placeholder="Enter tags"
                       value={this.props.tagInput}
-                      onChange={this.changeTagInput} //this.changeTagInput
+                      onChange={(event) => { this.sendTags(event);}} //this.changeTagInput
                       onKeyUp={this.watchForEnter} />
 
                     <div className="tag-list">

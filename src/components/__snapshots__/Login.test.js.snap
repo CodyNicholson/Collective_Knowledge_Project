@@ -61,19 +61,6 @@ exports[`Tags module test 1`] = `
             >
               Sign in
             </button>
-            <button
-              className="btn btn-lg btn-primary pull-xs-left"
-              disabled={true}
-              onClick={[Function]}
-              style={
-                Object {
-                  "opacity": 0.6,
-                }
-              }
-              type="button"
-            >
-              Google Login
-            </button>
           </fieldset>
         </form>
       </div>
