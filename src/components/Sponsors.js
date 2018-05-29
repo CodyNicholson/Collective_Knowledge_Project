@@ -1,6 +1,5 @@
-//This file was begun using code from Editor.js ~Carissa Ward
-import ListErrors from './ListErrors';
 import React from 'react';
+<<<<<<< HEAD
 import agent from '../agent';
 import Banner from './Home/Banner';
 import { connect } from 'react-redux';
@@ -45,4 +44,4 @@ export class Sponsors extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Sponsors);
+export default Sponsors;

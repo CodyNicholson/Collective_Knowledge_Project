@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import fire from '../../fire';
 
-
-class DevNotesComponent extends Component {
+class SponsorComponent extends Component {
     constructor(props) {
         super(props);
         this.editEvent = this.editEvent.bind(this);
@@ -16,13 +15,13 @@ class DevNotesComponent extends Component {
         this.setState({editing: true});
     }
     saveEvent() {
-        fire.database().ref('devnotes/'+this.props.eventId).set(this.refs.newText.value)
+        fire.database().ref('sponsors/'+this.props.eventId).set(this.refs.newText.value)
             .then(() => console.log("Save Successful"))
             .catch((error) => console.log("Save failed: " + error.message));
         window.location.reload();
     }
     removeEvent() {
-        fire.database().ref('devnotes/'+this.props.eventId).remove()
+        fire.database().ref('sponsors/'+this.props.eventId).remove()
             .then(() => console.log("Remove Successful"))
             .catch((error) => console.log("Remove failed: " + error.message));
         window.location.reload();
@@ -60,4 +59,4 @@ class DevNotesComponent extends Component {
         }
     }
 }
-export default DevNotesComponent;
+export default SponsorComponent;
