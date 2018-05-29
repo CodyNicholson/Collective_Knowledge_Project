@@ -27,7 +27,7 @@ const LoggedOutView = props => {
 
         <li className="nav-item">
           <Link to="/sponsors" className="nav-link">
-          <i className="ion-ios-people"></i>&nbsp;sponsors
+          <i className="ion-ios-people"></i>&nbsp;Sponsors
           </Link>
         </li>
 
@@ -75,7 +75,7 @@ const LoggedInView = props => {
 
         <li className="nav-item">
           <Link to="/sponsors" className="nav-link">
-          <i className="ion-ios-people"></i>&nbsp;sponsors
+          <i className="ion-ios-people"></i>&nbsp;Sponsors
           </Link>
         </li>
 

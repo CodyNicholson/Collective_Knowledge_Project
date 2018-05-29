@@ -15,12 +15,12 @@ class DevNotesBoardComponent extends Component {
         return (
             <div>
                 <div className="board">
-                    <button onClick={this.addEvent.bind(null, "Default Event Title;\nDefault Event Description;")} className="button-create">Add New Event</button>
                     {this.props.eventsList.map(devnotes =>
                         <DevNotesComponent key={devnotes.id} eventId={devnotes.id} >
                             {devnotes.text}
                        </DevNotesComponent>
                     )}
+                    <button onClick={this.addEvent.bind(null, "Default Event Title;\nDefault Event Description;")} className="button-create">Add New DevNote</button>
                 </div>
             </div>
         );
