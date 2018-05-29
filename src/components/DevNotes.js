@@ -1,11 +1,13 @@
 import React from 'react';
-
+import DevNotesBoard from "./DevNotesBoard/DevNotesBoard";
+import Appp from "./DevNotesBoard/index";
 
 class DevNotes extends React.Component{
 	render(){
 		return(
 				<div>
-				<p>Hello</p>
+					<Appp />
+					
 				</div>
 
 			);
