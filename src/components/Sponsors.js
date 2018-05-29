@@ -4,7 +4,7 @@ import React from 'react';
 import agent from '../agent';
 import Banner from './Home/Banner';
 import { connect } from 'react-redux';
-import infoGraphic from './ckDiagram.png';
+import company2 from './company2.png';
 import {
   SPONSORS_PAGE_LOADED
 } from '../constants/actionTypes';
@@ -35,9 +35,7 @@ export class Sponsors extends React.Component {
         <div className="container page">
           <div className="row">
             <div className="col-md-10 offset-md-1 col-xs-12">
-
-              <ListErrors errors={this.props.errors}></ListErrors>
-
+              <img src={company2} alt="Manoloria" className="centerGraphic"/>
 
             </div>
           </div>
