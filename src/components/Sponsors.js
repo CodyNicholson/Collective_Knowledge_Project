@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 import agent from '../agent';
 import Banner from './Home/Banner';
 import { connect } from 'react-redux';
