@@ -16,6 +16,7 @@ import Settings from '../components/Settings';
 import { store } from '../store';
 import { push } from 'react-router-redux';
 import DevNotes  from './DevNotes';
+import Sponsors from './Sponsors';
 
 const mapStateToProps = state => {
   return {
@@ -69,6 +70,7 @@ class App extends React.Component {
               <Route path="/@:username/favorites" component={ProfileFavorites} />
               <Route path="/@:username" component={Profile} />
               <Route path="/devnotes" component={DevNotes} />
+              <Route path="/sponsors" component={Sponsors}/>
             </Switch>
         </div>
       );

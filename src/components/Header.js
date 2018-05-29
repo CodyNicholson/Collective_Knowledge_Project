@@ -14,14 +14,20 @@ const LoggedOutView = props => {
         </li>
 
         <li className="nav-item">
-          <Link to="/DevNotes" className="nav-link">
-          <i className="ion-home"></i>&nbsp;DevNotes
+          <Link to="/about" className="nav-link">
+            <i className="ion-information-circled"></i>&nbsp;About
           </Link>
         </li>
 
         <li className="nav-item">
-          <Link to="/about" className="nav-link">
-            <i className="ion-information-circled"></i>&nbsp;About
+          <Link to="/DevNotes" className="nav-link">
+          <i className="ion-ios-paper"></i>&nbsp;DevNotes
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to="/sponsors" className="nav-link">
+          <i className="ion-ios-people"></i>&nbsp;sponsors
           </Link>
         </li>
 
@@ -56,16 +62,23 @@ const LoggedInView = props => {
         </li>
 
         <li className="nav-item">
-          <Link to="/DevNotes" className="nav-link">
-          <i className="ion-home"></i>&nbsp;DevNotes
-          </Link>
-        </li>
-        
-        <li className="nav-item">
           <Link to="/about" className="nav-link">
             <i className="ion-information-circled"></i>&nbsp;About
           </Link>
         </li>
+
+        <li className="nav-item">
+          <Link to="/DevNotes" className="nav-link">
+          <i className="ion-ios-paper"></i>&nbsp;DevNotes
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to="/sponsors" className="nav-link">
+          <i className="ion-ios-people"></i>&nbsp;sponsors
+          </Link>
+        </li>
+
 
         <li className="nav-item">
           <Link to="/editor" className="nav-link">

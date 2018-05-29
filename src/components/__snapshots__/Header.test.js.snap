@@ -34,11 +34,25 @@ exports[`Tags module test 1`] = `
       >
         <a
           className="nav-link"
+          href="/about"
+          onClick={[Function]}
+        >
+          <i
+            className="ion-information-circled"
+          />
+           About
+        </a>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
           href="/DevNotes"
           onClick={[Function]}
         >
           <i
-            className="ion-home"
+            className="ion-ios-paper"
           />
            DevNotes
         </a>
@@ -48,13 +62,13 @@ exports[`Tags module test 1`] = `
       >
         <a
           className="nav-link"
-          href="/about"
+          href="/sponsors"
           onClick={[Function]}
         >
           <i
-            className="ion-information-circled"
+            className="ion-ios-people"
           />
-           About
+           sponsors
         </a>
       </li>
       <li
