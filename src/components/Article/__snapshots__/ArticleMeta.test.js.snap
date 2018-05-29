@@ -1,3 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tags module test 1`] = `<span />`;
+exports[`Tags module test 1`] = `
+<span>
+  <a
+    className="btn btn-outline-secondary btn-sm"
+    href="/editor/undefined"
+    onClick={[Function]}
+  >
+    <i
+      className="ion-edit"
+    />
+     Edit Article
+  </a>
+  <button
+    className="btn btn-outline-danger btn-sm"
+    onClick={[Function]}
+  >
+    <i
+      className="ion-trash-a"
+    />
+     Delete Article
+  </button>
+</span>
+`;
