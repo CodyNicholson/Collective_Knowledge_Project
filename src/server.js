@@ -29,6 +29,7 @@ io.on('connection', (client) => {
     // Data will be the text user is entering
     console.log('SERVER: EDITING EVENT')
     console.log(data)
+    console.log()
     client.broadcast.to(data.article).emit('change text', data.text);
   })
 
