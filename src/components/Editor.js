@@ -55,6 +55,7 @@ class Editor extends React.Component {
       if (ev.keyCode === 13) {
         ev.preventDefault();
         this.props.onAddTag();
+        socket.emit('enter tag', {article: this.props.articleSlug});
       }
     };
 
@@ -82,6 +83,8 @@ class Editor extends React.Component {
     socket.on('change body', (payload) => this.updateBodyText(payload));
     socket.on('change description', (payload) => this.updateDescriptionText(payload));
     socket.on('change title', (payload) => this.updateTitleText(payload));
+    socket.on('change tags', (payload) => this.updateTagText(payload));
+    socket.on('add tag', (payload) => this.addTagsSock(payload));
 
   }
 
@@ -128,6 +131,11 @@ class Editor extends React.Component {
     socket.emit('edit title', {article: this.props.articleSlug, text: e.target.value});
   }
 
+  sendTags = (e) => {
+    this.changeTagInput(e);
+    socket.emit('edit tags', {article: this.props.articleSlug, text: e.target.value});
+  }
+
   updateBodyText(payload) {
     this.props.onUpdateField("body", payload)
   }
@@ -136,6 +144,13 @@ class Editor extends React.Component {
   }
   updateTitleText(payload) {
     this.props.onUpdateField("title", payload)
+  }
+  updateTagText(payload) {
+    this.props.onUpdateField("tagInput", payload)
+  }
+  addTagsSock(payload) {
+    //this.props.onUpdateField("tagInput", payload)
+    this.props.onAddTag();
   }
 
   render() {
@@ -184,7 +199,7 @@ class Editor extends React.Component {
                       type="text"
                       placeholder="Enter tags"
                       value={this.props.tagInput}
-                      onChange={this.changeTagInput} //this.changeTagInput
+                      onChange={(event) => { this.sendTags(event);}} //this.changeTagInput
                       onKeyUp={this.watchForEnter} />
 
                     <div className="tag-list">

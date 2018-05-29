@@ -83,6 +83,10 @@ io.on('connection', (client) => {
     client.broadcast.to(data.article).emit('change description', data.text);
   })
 
+  client.on('enter tag', function(data) {
+    client.broadcast.to(data.article).emit('add tag');
+  })
+
   });
 
   server.listen(port, () => console.log(`Listening on port ${port}`))
