@@ -43,8 +43,6 @@ class Editor extends React.Component {
     };
     //socket = socketIOClient(this.state.endpoint);
 
-    socket.on('change text', (payload) => this.updateBodyText(payload));
-
     const updateFieldEvent =
       key => ev => this.props.onUpdateField(key, ev.target.value);
 
@@ -80,6 +78,11 @@ class Editor extends React.Component {
 
       this.props.onSubmit(promise);
     };
+
+    socket.on('change body', (payload) => this.updateBodyText(payload));
+    socket.on('change description', (payload) => this.updateDescriptionText(payload));
+    socket.on('change title', (payload) => this.updateTitleText(payload));
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -110,27 +113,29 @@ class Editor extends React.Component {
     this.props.onUnload();
   }
 
-  send = (e) => {
-    //console.log(event.type);
-    // this.changeTagInput;
-    //const socket = socketIOClient(this.state.endpoint)
-    console.log("SENDING!");
-    console.log("BEFORE");
-    console.log(this.props.body);
+  sendBody = (e) => {
     this.changeBody(e);
-    console.log("AFTER");
-    console.log(this.props.body);
-    console.log(e.target.value);
-    socket.emit('edit event', {article: this.props.articleSlug, text: e.target.value});
+    socket.emit('edit body', {article: this.props.articleSlug, text: e.target.value});
+  }
+
+  sendDescription = (e) => {
+    this.changeDescription(e);
+    socket.emit('edit description', {article: this.props.articleSlug, text: e.target.value});
+  }
+
+  sendTitle = (e) => {
+    this.changeTitle(e);
+    socket.emit('edit title', {article: this.props.articleSlug, text: e.target.value});
   }
 
   updateBodyText(payload) {
-    console.log("UPDATING!");
-    //this.props.body = payload.text;
-    //console.log(payload);
     this.props.onUpdateField("body", payload)
-    //console.log("New body")
-    //console.log(this.props.body)
+  }
+  updateDescriptionText(payload) {
+    this.props.onUpdateField("description", payload)
+  }
+  updateTitleText(payload) {
+    this.props.onUpdateField("title", payload)
   }
 
   render() {
@@ -151,7 +156,7 @@ class Editor extends React.Component {
                       type="text"
                       placeholder="Article Title"
                       value={this.props.title}
-                      onChange={this.changeTitle} />
+                      onChange={(event) => { this.sendTitle(event);}} />
                   </fieldset>
 
                   <fieldset className="form-group">
@@ -160,7 +165,7 @@ class Editor extends React.Component {
                       type="text"
                       placeholder="What's this article about?"
                       value={this.props.description}
-                      onChange={this.changeDescription} />
+                      onChange={(event) => { this.sendDescription(event);}} />
                   </fieldset>
 
                   <fieldset className="form-group">
@@ -169,7 +174,7 @@ class Editor extends React.Component {
                       rows="8"
                       placeholder="Write your article (in markdown)"
                       value={this.props.body}
-                      onChange={(event) => { this.send(event);}}>
+                      onChange={(event) => { this.sendBody(event);}}>
                     </textarea>
                   </fieldset>
 
