@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tags module test 1`] = `
+<div
+  className="commentContainer"
+>
+  <div
+    className="projFlexList"
+  >
+    <div
+      className="textContent"
+    >
+      <h2
+        className="title"
+      >
+        thing1
+      </h2>
+      <div
+        className="description"
+      >
+        thing2
+      </div>
+      <button
+        className="button-primary"
+        onClick={[Function]}
+      >
+        Edit
+      </button>
+      <button
+        className="button-danger"
+        onClick={[Function]}
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+</div>
+`;

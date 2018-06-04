@@ -16,7 +16,7 @@ exports[`Tags module test 1`] = `
             className="button-create"
             onClick={[Function]}
           >
-            Add New Event
+            Add New DevNote
           </button>
         </div>
       </div>

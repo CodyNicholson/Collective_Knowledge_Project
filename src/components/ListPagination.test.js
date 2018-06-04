@@ -15,14 +15,4 @@ test('ListPagination component test', () => {
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 
-  //simulate click
-  //create mock onsetpage
-
-  //props is not existent. 
-  //console.log(JSON.stringify(tree.props, null, 2));
-  // manually trigger the callback
-  //tree.props.onSetPage;
-  // re-rendering
-  //tree = component.toJSON();
-  //expect(tree).toMatchSnapshot();
 });

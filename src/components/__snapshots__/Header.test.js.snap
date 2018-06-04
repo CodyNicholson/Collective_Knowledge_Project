@@ -68,7 +68,7 @@ exports[`Tags module test 1`] = `
           <i
             className="ion-ios-people"
           />
-           sponsors
+           Sponsors
         </a>
       </li>
       <li
