@@ -58,7 +58,7 @@ export class About extends React.Component {
                 <fieldset className="topBottomBorder">
 
                   <p>Email us here if you have any questions or suggestions:</p>
-                  <p>CKContactUs@gmail.com</p>
+                  <p>ContactUsCollectiveKnowledge@gmail.com</p>
                 </fieldset>
               </form>
             </div>
