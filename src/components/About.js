@@ -49,7 +49,7 @@ export class About extends React.Component {
 
                   <div className="qanda">Q. If I delete my profile, is any of my data kept?<br/>A. No.</div>
                   <div className="qanda">Q. How do I change my profile picture?<br/>A. Select "Copy image address" when you right click on your desired image online, then paste it into the the profile picture URL field in your settings.</div>
-                  <div className="qanda">Q. How do I collaborate on an article?<br/>A. As of now, you may simply leave a comment once in the article detail view.</div>
+                  <div className="qanda">Q. How do I collaborate on an article?<br/>A. Simply click edit like you would your own article.</div>
                   <div className="qanda">Q. How do I edit an article?<br/>A. Once you have created an article, in the article detail view, click the button "Edit Article".</div>
 
                 </fieldset>
